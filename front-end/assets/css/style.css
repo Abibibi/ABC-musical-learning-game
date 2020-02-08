@@ -1,0 +1,36 @@
+@media screen and (min-width: 300px) {
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #app {
+        height: 100%;
+    }
+
+    .keys {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+
+    .key {
+        border: .4rem solid black;
+        border-radius: .5rem;
+        margin: 1rem;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .07s ease;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        color: white;
+        background: rgba(0,0,0,0.4);
+        text-shadow: 0 0 .5rem black;
+    }
+}
