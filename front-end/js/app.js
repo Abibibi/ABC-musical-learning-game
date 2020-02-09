@@ -3,6 +3,7 @@ const app = {
         app.container = document.getElementById('app');
         app.createVisualKeys();
         app.createAudioKeys();
+        app.enablePlayingSound();
     },
 
     createVisualKeys: () => {
@@ -34,12 +35,38 @@ const app = {
         app.audioFiles = await (await fetch('http://localhost:5000/sounds')).json();
 
         app.audioFiles.map((oneAudio) => {
-            app.audioKey = document.createElement('audio');
-            app.audioKey.setAttribute('data-key', oneAudio.charCodeAt(0));
-            app.audioKey.setAttribute('src', `../../data/sounds/${oneAudio}`);
+            app.keyAudio = document.createElement('audio');
+            app.keyAudio.setAttribute('data-key', oneAudio.charCodeAt(0));
+            app.keyAudio.setAttribute('src', `../../data/sounds/${oneAudio}`);
             
-            app.container.appendChild(app.audioKey);
+            app.container.appendChild(app.keyAudio);
         });
+    },
+
+    playSound: (event) => {
+        app.audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+        app.visual = document.querySelector(`.key[data-key="${event.keyCode}"]`);
+        
+        if(!app.audio) return;
+        console.log('playSound');
+        app.audio.currentTime = 0;
+        app.audio.play();
+        app.visual.classList.add('playing');
+    },
+
+    removeTransition: (event) => {
+        if (event.propertyName !== 'transform') return;
+
+        event.target.classList.remove('playing');
+    },
+
+    enablePlayingSound: () => {
+        console.log('enablePlayingSound');
+        app.visualKeys = document.querySelectorAll('.key');
+        
+        app.visualKeys.forEach(key => key.addEventListener('transitionend', app.removeTransition));
+        
+        window.addEventListener('keydown', app.playSound); 
     }
 };
 

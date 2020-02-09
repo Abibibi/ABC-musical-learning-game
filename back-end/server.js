@@ -15,6 +15,7 @@ app.use(express.json());
 app.get('/sounds', function (req, res) {
     const folder = '../data/sounds';
 
+    // readdir method reads a directory - here, the data directory, which contains all audio files
     fs.readdir(folder, (err, files) => {
         res.json(files);
     });
@@ -25,5 +26,5 @@ app.get('/sounds', function (req, res) {
 const port = 5000;
 
 app.listen(port, () => {
-    console.log('Server is running at http://localhost:5000');
-})
+    console.log(`Server is running at http://localhost:${port}`);
+});
