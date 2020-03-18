@@ -17,11 +17,14 @@ const app = {
         
             // for each kbd text content to be a letter from the alphabet
             app.keyVisualKbd.textContent = String.fromCharCode(65 + i);
+            
             app.keyVisual.appendChild(app.keyVisualKbd);
     
             // to get the UTF-16 code of each letter and make it the value of a data-key attribute
             app.keyVisual.setAttribute('data-key', app.keyVisual.textContent.charCodeAt(0));
-
+            
+            app.keyVisual.addEventListener('click', app.playSound);
+           
             app.keysVisual.appendChild(app.keyVisual);
         };
 
@@ -44,28 +47,43 @@ const app = {
     },
 
     playSound: (event) => {
-        app.audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
-        app.visual = document.querySelector(`.key[data-key="${event.keyCode}"]`);
-        
+        app.audio = document.querySelector(`audio[data-key="${event.keyCode}"]`) || document.querySelector(`audio[data-key="${event.target.dataset.key}"]`) || document.querySelector(`audio[data-key="${event.target.parentNode.dataset.key}"]`);
+
         if(!app.audio) return;
         console.log('playSound');
         app.audio.currentTime = 0;
         app.audio.play();
-        app.visual.classList.add('playing');
+
+        // the playing style is applied to the div containing the letter when :
+
+        // the matching key is pressed
+        if (event.keyCode) {
+            document.querySelector(`.key[data-key="${event.keyCode}"]`).classList.add('playing');
+
+        // OR the div is clicked
+        } else if (event.target.dataset.key) {
+            event.target.classList.add('playing');
+            
+        // OR the kbd element (inside of the div) is clicked
+        } else if (event.target.parentNode.dataset.key) {
+            event.target.parentNode.classList.add('playing');
+        }
     },
 
     removeTransition: (event) => {
-        if (event.propertyName !== 'transform') return;
+        console.log(event);
+        if (event.propertyName !== 'transform') {
+            return;
+        };
 
         event.target.classList.remove('playing');
     },
 
     enablePlayingSound: () => {
-        console.log('enablePlayingSound');
         app.visualKeys = document.querySelectorAll('.key');
-        
+
         app.visualKeys.forEach(key => key.addEventListener('transitionend', app.removeTransition));
-        
+
         window.addEventListener('keydown', app.playSound); 
     }
 };
