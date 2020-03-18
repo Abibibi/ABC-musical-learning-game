@@ -14,29 +14,29 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        margin-top: 5rem;
+        margin-top: 12.5vh;
     }
 
     .key {
-        border: .4rem solid black;
-        border-radius: .5rem;
-        margin: 1rem;
-        font-size: 1.5rem;
+        border: 1.1vh solid black;
+        border-radius: 1.25vh;
+        margin: 2.5vh;
+        font-size: 3.75vh;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all .07s ease;
-        width: 3rem;
-        height: 3rem;
+        width: 7.5vh;
+        height: 7.5vh;
         text-align: center;
         color: white;
         background: rgba(0,0,0,0.4);
-        text-shadow: 0 0 .5rem black;
+        text-shadow: 0 0 1.25vh black;
     }
 
     .playing {
         transform: scale(1.1);
         border-color: #ffc600;
-        box-shadow: 0 0 1rem #ffc600;
+        box-shadow: 0 0 2.5vh #ffc600;
     }
 }
