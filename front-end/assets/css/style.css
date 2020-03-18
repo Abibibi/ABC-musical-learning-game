@@ -22,14 +22,14 @@
         cursor: pointer;
         border: 1.1vh solid black;
         border-radius: 1.25vh;
-        margin: 2.5vh;
-        font-size: 3.75vh;
+        margin: 5vh;
+        font-size: 4.5vh;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all .07s ease;
-        width: 7.5vh;
-        height: 7.5vh;
+        width: 10vh;
+        height: 10vh;
         text-align: center;
         color: white;
         background: rgba(0,0,0,0.4);

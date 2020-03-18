@@ -1,5 +1,16 @@
 const app = {
     init: () => {
+        setTimeout(() => {
+            // to make sure height taken into account
+            // is always window height, even if 
+            // viewport height is reduced (typically,
+            // when the keyboard is displayed on mobile)
+            const viewheight = window.innerHeight;
+            const viewwidth = window.innerWidth;
+            const viewport = document.querySelector('meta[name=viewport]');
+            viewport.setAttribute('content', `height=${viewheight}px, width=${viewwidth}px, initial-scale=1.0`);
+        }, 300);
+        
         app.container = document.getElementById('app');
         app.createVisualKeys();
         app.createAudioKeys();
@@ -37,6 +48,8 @@ const app = {
         // on the front side
         app.audioFiles = await (await fetch('http://localhost:5000/sounds')).json();
 
+        console.log(app.audioFiles);
+
         app.audioFiles.map((oneAudio) => {
             app.keyAudio = document.createElement('audio');
             app.keyAudio.setAttribute('data-key', oneAudio.charCodeAt(0));
@@ -63,7 +76,7 @@ const app = {
         // OR the div is clicked
         } else if (event.target.dataset.key) {
             event.target.classList.add('playing');
-            
+
         // OR the kbd element (inside of the div) is clicked
         } else if (event.target.parentNode.dataset.key) {
             event.target.parentNode.classList.add('playing');
