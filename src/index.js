@@ -128,21 +128,37 @@ const app = {
         app.footerDiv = document.createElement('div');
         app.footerDiv.classList.add('footer-container');
 
+        app.footerInspired = document.createElement('p');
+        app.footerInspired.classList.add('footer-inspired');
+        app.footerInspired.textContent = 'Inspired by:'
+        app.footerDiv.appendChild(app.footerInspired);
+
         app.footerLinks = document.createElement('div');
         app.footerLinks.classList.add('footer-container-links');
 
         footerLinks.map((footerLink) => {
-            app.footerContact = document.createElement('p');
-            
-            app.footerContactLink = document.createElement('a');
-            app.footerContactLink.setAttribute('href', footerLink.link);
-            app.footerContactLink.setAttribute('target', '_blank');
-            app.footerContactLink.setAttribute('rel', 'noopener noreferrer');
-            app.footerContactLink.textContent = footerLink.type;
+            app.footerSource = document.createElement('p');
+            app.footerSource.classList.add('footer-container-links-link');
 
-            app.footerContact.appendChild(app.footerContactLink);
-            app.footerLinks.appendChild(app.footerContact);
+            app.footerSourceLink = document.createElement('a');
+            app.footerSourceLink.setAttribute('href', footerLink.link);
+            app.footerSourceLink.setAttribute('target', '_blank');
+            app.footerSourceLink.setAttribute('rel', 'noopener noreferrer');
+            app.footerSourceLink.textContent = footerLink.type;
+
+            app.footerSource.appendChild(app.footerSourceLink);
+            app.footerLinks.appendChild(app.footerSource);
         });
+
+        app.footerContact = document.createElement('p');
+        app.footerContact.classList.add('footer-container-contact');
+        app.footerContactLink = document.createElement('a');
+        app.footerContactLink.textContent = 'Contact';
+        app.footerContactLink.setAttribute('href', 'mailto:contact@abcgame.rocks?Subject=Contact');
+        app.footerContactLink.setAttribute('target', '_blank');
+        app.footerContactLink.setAttribute('rel', 'noopener noreferrer');
+
+        app.footerContact.appendChild(app.footerContactLink);
 
         app.copyrightDiv = document.createElement('div');
         app.copyrightDiv.classList.add('footer-container-copyright');
@@ -156,6 +172,7 @@ const app = {
 
         app.footerDiv.append(
             app.footerLinks,
+            app.footerContact,
             app.copyrightDiv
         )
 
