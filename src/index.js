@@ -28,7 +28,7 @@ const app = {
 
         for (let i=0; i<26; i++) {
             app.keyVisual = document.createElement('div');
-            app.keyVisual.classList.add('key');
+            app.keyVisual.classList.add('key', `key-${i + 1}`);
             app.keyVisualKbd = document.createElement('kbd');
         
             // for each kbd text content to be a letter from the alphabet

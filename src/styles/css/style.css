@@ -34,7 +34,110 @@
         height: 10vh;
         text-align: center;
         color: #000000;
+    }
+
+    .key-1 {
         background: rgb(255, 212, 0);
+    }
+
+    .key-2 {
+        background: rgb(255, 165, 0);
+    }
+
+    .key-3 {
+        background: rgb(86, 255, 0);
+    }
+
+    .key-4 {
+        background: rgb(0, 208, 255);
+    }
+
+    .key-5 {
+        background: rgb(228, 0, 255);
+    }
+
+    .key-6 {
+        background: rgb(255, 151, 255);
+    }
+
+    .key-7 {
+        background: rgb(75, 255, 0);
+    }
+
+    .key-8 {
+        background: rgb(255, 0, 59);
+    }
+
+    .key-9 {
+        background: rgb(228, 0, 255);
+    }
+
+    .key-10 {
+        background: rgb(0, 208, 255);
+    }
+
+    .key-11 {
+        background: rgb(251, 255, 0);
+    }
+
+    .key-12 {
+        background: rgb(255, 165, 0);
+    }
+
+    .key-13 {
+        background: rgb(0, 255, 149);
+    }
+
+    .key-14 {
+        background: #ff97ff;
+    }
+
+    .key-15 {
+        background: rgb(0, 255, 149);
+    }
+
+    .key-16 {
+        background: rgb(75, 255, 0);
+    }
+
+    .key-17 {
+        background: rgb(255, 0, 59);
+    }
+
+    .key-18 {
+        background: rgb(255, 165, 0);
+    }
+
+    .key-19 {
+        background: rgb(0, 208, 255);
+    }
+
+    .key-20 {
+        background: rgb(251, 255, 0);
+    }
+
+    .key-21 {
+        background: rgb(228, 0, 255);
+    }
+
+    .key-22 {
+        background: rgb(251, 255, 0);
+    }
+
+    .key-23 {
+        background: rgb(0, 255, 243);
+    }
+
+    .key-24 {
+        background: rgb(228, 0, 255);
+    }
+
+    .key-25 {
+        background: rgb(75, 255, 0);
+    }
+
+    .key-26 {
+        background: rgb(255, 165, 0);
     }
 
     .playing {
