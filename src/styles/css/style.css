@@ -282,6 +282,7 @@
 
     .playing {
         transform: scale(1.1);
+        border-radius: 2.25vh;
         border-color: #fbff00;
         box-shadow: 0 0 2.5vh #fbff00;
     }
