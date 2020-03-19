@@ -60,11 +60,10 @@ const app = {
     },
 
     playSound: (event) => {
+        // values depends on how letter was targeted (either pressed or clicked). Click can be done either on div or kbd element, hence the 2 last possibilities respectively.
         app.audio = document.querySelector(`audio[data-key="${event.keyCode}"]`) || document.querySelector(`audio[data-key="${event.target.dataset.key}"]`) || document.querySelector(`audio[data-key="${event.target.parentNode.dataset.key}"]`);
 
         if(!app.audio) return;
-
-        console.log(app.audio);
 
         app.audio.currentTime = 0;
         app.audio.play();

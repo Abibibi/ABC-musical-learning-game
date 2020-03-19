@@ -142,7 +142,7 @@
 
     .playing {
         transform: scale(1.1);
-        border-color: #cc00ff;
-        box-shadow: 0 0 2.5vh #cc00ff;
+        border-color: #fbff00;
+        box-shadow: 0 0 2.5vh #fbff00;
     }
 }
