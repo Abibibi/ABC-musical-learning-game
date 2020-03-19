@@ -98,6 +98,11 @@ const app = {
         app.visualKeys.forEach(key => key.addEventListener('transitionend', app.removeTransition));
 
         window.addEventListener('keydown', app.playSound); 
+    },
+
+    createFooter: () => {
+        app.footer = document.createElement('footer');
+        
     }
 };
 
