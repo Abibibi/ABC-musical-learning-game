@@ -4,6 +4,7 @@
         margin: 0;
         padding: 0;
         font-family: 'Sniglet', cursive;
+        background-color: #9eedff;
     }
     
     #app {
@@ -20,8 +21,9 @@
 
     .key {
         cursor: pointer;
-        border: 1.1vh solid black;
-        border-radius: 1.25vh;
+        border: 0.8vh solid black;
+        font-weight: 600;
+        border-radius: 2.25vh;
         margin: 5vh;
         font-size: 4.5vh;
         display: flex;
@@ -31,14 +33,13 @@
         width: 10vh;
         height: 10vh;
         text-align: center;
-        color: white;
-        background: rgba(0,0,0,0.4);
-        text-shadow: 0 0 1.25vh black;
+        color: #000000;
+        background: rgb(255, 212, 0);
     }
 
     .playing {
         transform: scale(1.1);
-        border-color: #ffc600;
-        box-shadow: 0 0 2.5vh #ffc600;
+        border-color: #cc00ff;
+        box-shadow: 0 0 2.5vh #cc00ff;
     }
 }
