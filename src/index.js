@@ -30,7 +30,7 @@ const app = {
         app.title = document.createElement('h1');
         app.title.classList.add('title');
 
-        app.title.textContent = 'Learn your ABCs!'
+        app.title.textContent = 'Learn your ABCs'
 
         app.smallTitle = document.createElement('h2');
         app.smallTitle.classList.add('smallTitle');

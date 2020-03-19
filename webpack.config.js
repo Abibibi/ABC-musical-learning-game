@@ -40,6 +40,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Sing and learn your ABCs!',
+            favicon: "./src/styles/images/favicon.png",
+            filename: "index.html",
             template: './src/index.html'
         })
     ]
