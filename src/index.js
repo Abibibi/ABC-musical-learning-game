@@ -2,6 +2,7 @@ import './styles/css/reset.css';
 import './styles/css/style.css';
 
 import allSounds from './data/allSounds/allSounds.js';
+import footerLinks from './data/footer/footerLinks.js';
 
 const app = {
     init: () => {
@@ -17,9 +18,29 @@ const app = {
         }, 300);
         
         app.container = document.getElementById('app');
+
+        app.createTitle();
         app.createVisualKeys();
         app.createAudioKeys();
         app.enablePlayingSound();
+        app.createFooter();
+    },
+
+    createTitle: () => {
+        app.title = document.createElement('h1');
+        app.title.classList.add('title');
+
+        app.title.textContent = 'Learn your ABCs!'
+
+        app.smallTitle = document.createElement('h2');
+        app.smallTitle.classList.add('smallTitle');
+
+        app.smallTitle.textContent = 'Click or press the key of a letter and sing along!';
+
+        app.container.append(
+            app.title,
+            app.smallTitle
+        );
     },
 
     createVisualKeys: () => {
@@ -102,7 +123,45 @@ const app = {
 
     createFooter: () => {
         app.footer = document.createElement('footer');
-        
+        app.footer.classList.add('footer');
+
+        app.footerDiv = document.createElement('div');
+        app.footerDiv.classList.add('footer-container');
+
+        app.footerLinks = document.createElement('div');
+        app.footerLinks.classList.add('footer-container-links');
+
+        footerLinks.map((footerLink) => {
+            app.footerContact = document.createElement('p');
+            
+            app.footerContactLink = document.createElement('a');
+            app.footerContactLink.setAttribute('href', footerLink.link);
+            app.footerContactLink.setAttribute('target', '_blank');
+            app.footerContactLink.setAttribute('rel', 'noopener noreferrer');
+            app.footerContactLink.textContent = footerLink.type;
+
+            app.footerContact.appendChild(app.footerContactLink);
+            app.footerLinks.appendChild(app.footerContact);
+        });
+
+        app.copyrightDiv = document.createElement('div');
+        app.copyrightDiv.classList.add('footer-container-copyright');
+
+        app.copyright = document.createElement('p');
+        app.copyright.textContent = 'ABC game rocks - 2020 ©';
+
+        app.copyrightDiv.append(
+            app.copyright
+        );
+
+        app.footerDiv.append(
+            app.footerLinks,
+            app.copyrightDiv
+        )
+
+        app.footer.appendChild(app.footerDiv);
+
+        app.container.appendChild(app.footer);
     }
 };
 

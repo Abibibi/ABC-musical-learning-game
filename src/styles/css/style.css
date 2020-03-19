@@ -1,289 +1,359 @@
-@media screen and (min-width: 300px) {
-    html, body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sniglet', cursive;
+    background-color: #9eedff;
+    overflow-x: hidden;
+}
+
+#background-wrap {
+    bottom: 0;
+    left: 0;
+    padding-top: 7vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+@-webkit-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@-moz-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+.x1 {
+    -webkit-animation: animateCloud 130s linear infinite;
+    -moz-animation: animateCloud 130s linear infinite;
+    animation: animateCloud 130s linear infinite;
+    
+    -webkit-transform: scale(0.65);
+    -moz-transform: scale(0.65);
+    transform: scale(0.65);
+}
+
+.x2 {
+    -webkit-animation: animateCloud 110s linear infinite;
+    -moz-animation: animateCloud 110s linear infinite;
+    animation: animateCloud 110s linear infinite;
+    
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    transform: scale(0.3);
+}
+
+.x3 {
+    -webkit-animation: animateCloud 115s linear infinite;
+    -moz-animation: animateCloud 115s linear infinite;
+    animation: animateCloud 115s linear infinite;
+    
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+.x4 {
+    -webkit-animation: animateCloud 100s linear infinite;
+    -moz-animation: animateCloud 100s linear infinite;
+    animation: animateCloud 100s linear infinite;
+    
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    transform: scale(0.4);
+}
+
+.x5 {
+    -webkit-animation: animateCloud 90s linear infinite;
+    -moz-animation: animateCloud 90s linear infinite;
+    animation: animateCloud 90s linear infinite;
+    
+    -webkit-transform: scale(0.55);
+    -moz-transform: scale(0.55);
+    transform: scale(0.55);
+}
+
+.cloud {
+    background: #fff;
+    background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
+    background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+    background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+    background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+    background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+    
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    
+    -webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+
+    height: 120px;
+    position: relative;
+    width: 350px;
+}
+
+.cloud:after, .cloud:before {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-indeX: -1;
+}
+
+.cloud:after {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+
+    height: 100px;
+    left: 50px;
+    top: -50px;
+    width: 100px;
+}
+
+.cloud:before {
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    border-radius: 200px;
+
+    width: 180px;
+    height: 180px;
+    right: 50px;
+    top: -90px;
+}
+
+#app {
+    height: 100%;
+    position: relative;
+}
+
+.keys {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 12.5vh 0 10vh;
+}
+
+.key {
+    cursor: pointer;
+    border: 0.8vh solid black;
+    font-weight: 600;
+    border-radius: 2.25vh;
+    margin: 5vh;
+    font-size: 4.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .07s ease;
+    width: 10vh;
+    height: 10vh;
+    text-align: center;
+    color: #000000;
+}
+
+.key-1 {
+    background: rgb(255, 212, 0);
+}
+
+.key-2 {
+    background: rgb(255, 165, 0);
+}
+
+.key-3 {
+    background: rgb(86, 255, 0);
+}
+
+.key-4 {
+    background: rgb(0, 208, 255);
+}
+
+.key-5 {
+    background: rgb(228, 0, 255);
+}
+
+.key-6 {
+    background: rgb(255, 151, 255);
+}
+
+.key-7 {
+    background: rgb(75, 255, 0);
+}
+
+.key-8 {
+    background: rgb(255, 0, 59);
+}
+
+.key-9 {
+    background: rgb(228, 0, 255);
+}
+
+.key-10 {
+    background: rgb(0, 208, 255);
+}
+
+.key-11 {
+    background: rgb(251, 255, 0);
+}
+
+.key-12 {
+    background: rgb(255, 165, 0);
+}
+
+.key-13 {
+    background: rgb(0, 255, 149);
+}
+
+.key-14 {
+    background: #ff97ff;
+}
+
+.key-15 {
+    background: rgb(0, 255, 149);
+}
+
+.key-16 {
+    background: rgb(75, 255, 0);
+}
+
+.key-17 {
+    background: rgb(255, 0, 59);
+}
+
+.key-18 {
+    background: rgb(255, 165, 0);
+}
+
+.key-19 {
+    background: rgb(0, 208, 255);
+}
+
+.key-20 {
+    background: rgb(251, 255, 0);
+}
+
+.key-21 {
+    background: rgb(228, 0, 255);
+}
+
+.key-22 {
+    background: rgb(251, 255, 0);
+}
+
+.key-23 {
+    background: rgb(0, 255, 243);
+}
+
+.key-24 {
+    background: rgb(228, 0, 255);
+}
+
+.key-25 {
+    background: rgb(75, 255, 0);
+}
+
+.key-26 {
+    background: rgb(255, 165, 0);
+}
+
+.playing {
+    transform: scale(1.1);
+    border-radius: 2.25vh;
+    border-color: #fbff00;
+    box-shadow: 0 0 2.5vh #fbff00;
+}
+
+.footer-container {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.footer-container-links {
+    font-size: 2.8vh;
+}
+
+.footer-container-copyright {
+    font-size: 2.1vh;
+}
+
+@media screen and (min-width: 300px) and (max-width: 1023px), screen and (min-width: 1000px) and (max-width: 1100px) and (min-height: 1300px) and (max-height: 1400px) {
+    #app .footer {
+        height: 25vh;
+    }
+
+    #app .footer-container {
+        flex-direction: column;
+        justify-content: space-around;
         height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: 'Sniglet', cursive;
-        background-color: #9eedff;
-        overflow-x: hidden;
     }
 
-    #background-wrap {
-        bottom: 0;
-        left: 0;
-        padding-top: 7vh;
-        position: fixed;
-        right: 0;
-        top: 0;
-    }
-
-    @-webkit-keyframes animateCloud {
-        0% {
-            margin-left: -1000px;
-        }
-        100% {
-            margin-left: 100%;
-        }
-    }
-
-    @-moz-keyframes animateCloud {
-        0% {
-            margin-left: -1000px;
-        }
-        100% {
-            margin-left: 100%;
-        }
-    }
-
-    @keyframes animateCloud {
-        0% {
-            margin-left: -1000px;
-        }
-        100% {
-            margin-left: 100%;
-        }
-    }
-
-    .x1 {
-        -webkit-animation: animateCloud 130s linear infinite;
-        -moz-animation: animateCloud 130s linear infinite;
-        animation: animateCloud 130s linear infinite;
-        
-        -webkit-transform: scale(0.65);
-        -moz-transform: scale(0.65);
-        transform: scale(0.65);
-    }
-    
-    .x2 {
-        -webkit-animation: animateCloud 110s linear infinite;
-        -moz-animation: animateCloud 110s linear infinite;
-        animation: animateCloud 110s linear infinite;
-        
-        -webkit-transform: scale(0.3);
-        -moz-transform: scale(0.3);
-        transform: scale(0.3);
-    }
-    
-    .x3 {
-        -webkit-animation: animateCloud 115s linear infinite;
-        -moz-animation: animateCloud 115s linear infinite;
-        animation: animateCloud 115s linear infinite;
-        
-        -webkit-transform: scale(0.5);
-        -moz-transform: scale(0.5);
-        transform: scale(0.5);
-    }
-    
-    .x4 {
-        -webkit-animation: animateCloud 100s linear infinite;
-        -moz-animation: animateCloud 100s linear infinite;
-        animation: animateCloud 100s linear infinite;
-        
-        -webkit-transform: scale(0.4);
-        -moz-transform: scale(0.4);
-        transform: scale(0.4);
-    }
-    
-    .x5 {
-        -webkit-animation: animateCloud 90s linear infinite;
-        -moz-animation: animateCloud 90s linear infinite;
-        animation: animateCloud 90s linear infinite;
-        
-        -webkit-transform: scale(0.55);
-        -moz-transform: scale(0.55);
-        transform: scale(0.55);
-    }
-
-    .cloud {
-        background: #fff;
-        background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
-        background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
-        background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
-        background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
-        background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
-        
-        -webkit-border-radius: 100px;
-        -moz-border-radius: 100px;
-        border-radius: 100px;
-        
-        -webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-    
-        height: 120px;
-        position: relative;
-        width: 350px;
-    }
-    
-    .cloud:after, .cloud:before {
-        background: #fff;
-        content: '';
-        position: absolute;
-        z-indeX: -1;
-    }
-    
-    .cloud:after {
-        -webkit-border-radius: 100px;
-        -moz-border-radius: 100px;
-        border-radius: 100px;
-    
-        height: 100px;
-        left: 50px;
-        top: -50px;
-        width: 100px;
-    }
-    
-    .cloud:before {
-        -webkit-border-radius: 200px;
-        -moz-border-radius: 200px;
-        border-radius: 200px;
-    
-        width: 180px;
-        height: 180px;
-        right: 50px;
-        top: -90px;
-    }
-    
-    #app {
-        height: 100%;
-        position: relative;
-    }
-
-    .keys {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        padding-top: 12.5vh;
-    }
-
-    .key {
-        cursor: pointer;
-        border: 0.8vh solid black;
-        font-weight: 600;
-        border-radius: 2.25vh;
-        margin: 5vh;
-        font-size: 4.5vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all .07s ease;
-        width: 10vh;
-        height: 10vh;
+    #app .footer-container-links {
         text-align: center;
-        color: #000000;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
-    .key-1 {
-        background: rgb(255, 212, 0);
+    #app .footer-container-copyright {
+        text-align: center;
+        font-size: 2.1vh;
+        height: 27%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        height: 14vh;
+        display: flex;
+        align-items: center;
     }
 
-    .key-2 {
-        background: rgb(255, 165, 0);
+    .footer-container {
+        width: 40%;
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
     }
 
-    .key-3 {
-        background: rgb(86, 255, 0);
+    .footer-container-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    .key-4 {
-        background: rgb(0, 208, 255);
-    }
-
-    .key-5 {
-        background: rgb(228, 0, 255);
-    }
-
-    .key-6 {
-        background: rgb(255, 151, 255);
-    }
-
-    .key-7 {
-        background: rgb(75, 255, 0);
-    }
-
-    .key-8 {
-        background: rgb(255, 0, 59);
-    }
-
-    .key-9 {
-        background: rgb(228, 0, 255);
-    }
-
-    .key-10 {
-        background: rgb(0, 208, 255);
-    }
-
-    .key-11 {
-        background: rgb(251, 255, 0);
-    }
-
-    .key-12 {
-        background: rgb(255, 165, 0);
-    }
-
-    .key-13 {
-        background: rgb(0, 255, 149);
-    }
-
-    .key-14 {
-        background: #ff97ff;
-    }
-
-    .key-15 {
-        background: rgb(0, 255, 149);
-    }
-
-    .key-16 {
-        background: rgb(75, 255, 0);
-    }
-
-    .key-17 {
-        background: rgb(255, 0, 59);
-    }
-
-    .key-18 {
-        background: rgb(255, 165, 0);
-    }
-
-    .key-19 {
-        background: rgb(0, 208, 255);
-    }
-
-    .key-20 {
-        background: rgb(251, 255, 0);
-    }
-
-    .key-21 {
-        background: rgb(228, 0, 255);
-    }
-
-    .key-22 {
-        background: rgb(251, 255, 0);
-    }
-
-    .key-23 {
-        background: rgb(0, 255, 243);
-    }
-
-    .key-24 {
-        background: rgb(228, 0, 255);
-    }
-
-    .key-25 {
-        background: rgb(75, 255, 0);
-    }
-
-    .key-26 {
-        background: rgb(255, 165, 0);
-    }
-
-    .playing {
-        transform: scale(1.1);
-        border-radius: 2.25vh;
-        border-color: #fbff00;
-        box-shadow: 0 0 2.5vh #fbff00;
+    .footer-container-copyright {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
 }
